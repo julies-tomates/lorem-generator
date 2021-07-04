@@ -4,10 +4,16 @@ const app = express();
 
 // Require the express routes defined in router.js
 const routes = require('./router');
+const compression = require('compression');
+const helmet = require('helmet');
+
 
 //localhost and port
 const hostname = '127.0.0.1';
 const port = 3000;
+
+app.use(compression()); //Compress all routes
+app.use(helmet());
 
 //directory of static files
 app.use(express.static('public'));

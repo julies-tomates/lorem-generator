@@ -18,17 +18,25 @@ function GenerateNewText() {
         "Sadly, I had to pay after market prices for these.",
         "I’m a tactile person myself.",
         "This is end game, for sure.",
+        "I have one pair of hands but 24 keyboards.",
         "Specs?",
+        "I need something to test out my new soldering iron.",
         "There’s a new group buy coming up that I’m waiting for.",
         "GMK is delayed by a year.",
         "Yeah once the caps come in, I’ll have this keyboard done.", 
         "How much was your latest build?",
         "Wow do you use all those keyboards?",
         "I forgot to lube my switches.",
+        "Been thinking about getting a custom handmade wrist rest to match my keyboard.",
         "It was supposed to be a budget build.",
+        "You're a fool if you think the first build will be your last.",
         "Hopefully there will be a round 2 for that.",
         "I'm pretty sure I saw that on someone's build stream.",
         "That's a really nice build.",
+        "Yeah, I have a custom coiled cable to match my custom mechanical keyboard and custom wrist rest that all fit nicely in my custom keyboard case.",
+        "Finally had some time to lube these switches.",
+        "Are those Cherry MX Browns?",
+        "Really loving the caps!",
         "I wonder how long it took for everything to arrive.", 
         "I find lubing switches to be therapeutic.",
         "I'm already thinking about my next build.",
@@ -93,16 +101,21 @@ GenerateNewText.prototype.getUniqueParagraph = function() {
 GenerateNewText.prototype.getAllParagraphs = function(numberOfParagraphs) {
     let allParagraphs = [];
     // Generate the number of paragraphs as specified by the user
-    while (allParagraphs.length < numberOfParagraphs) {
-      allParagraphs.push(this.getUniqueParagraph());
+    if(numberOfParagraphs > 0){
+      while (allParagraphs.length < numberOfParagraphs) {
+        allParagraphs.push(this.getUniqueParagraph());
+      }
+      // Convert array into HTML string
+      let paragraphHTML = "";
+      allParagraphs.forEach(function (paragraph) {
+        paragraphHTML += "<p>" + paragraph + "</p>";
+      });
+      let div = "<div class='generated-text'>" + paragraphHTML + "</div>"
+      return div;
+    } else {
+      return ""
     }
-    // Convert array into HTML string
-    let paragraphHTML = "";
-    allParagraphs.forEach(function (paragraph) {
-      paragraphHTML += "<p>" + paragraph + "</p>";
-    });
-    let div = "<div class='generated-text'>" + paragraphHTML + "</div>"
-    return div;
+
 }
   
 module.exports = loremIpsum;
