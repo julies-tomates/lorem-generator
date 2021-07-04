@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // Require the express routes defined in router.js
-const routes = require('./router');
+const routes = require('./router.js');
 const compression = require('compression');
 const helmet = require('helmet');
 
