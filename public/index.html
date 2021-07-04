@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet"></link>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Tourney:wght@300;400&display=swap" rel="stylesheet">
+    <title>Keeb Geek Ipsum</title>
+  </head>
+  <body>
+
+    <header>
+      <img class="keeb-img" src="kblight.svg" alt="mechanical keyboard" width="70%">
+      
+      <h1 class="title">Keeb Geek Ipsum</h1>
+      <p class="description">"Switch" up your builds with placement text related to the struggles of the mechanical keyboard building community.</p>
+    </header>
+
+    <main>
+
+      <p class="instructions">Enter in the number of paragraphs you'd like!</p>
+
+  
+      <form action="/" method="POST" class="paragraph-form">
+          <input id="numberOfParagraphs" name="numberOfParagraphs" type="number" class="paragraph-input">
+          <label for="numberOfParagraphs">paragraphs</label>
+          <button type="submit" value="Generate" class="generate-button">
+            <span class="front">generate</span>
+          </button>
+      </form>
+
+      <div>
+          <div class='placeholder-div'></div>
+      </div>
+
+    </main>
+
+
+  </body>
+</html>
